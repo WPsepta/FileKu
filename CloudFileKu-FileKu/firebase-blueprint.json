@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "files": {
+      "title": "Files",
+      "description": "Collection of uploaded files in the cloud storage",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique file identifier" },
+        "name": { "type": "string", "description": "File name with extension" },
+        "size": { "type": "number", "description": "File size in bytes" },
+        "type": { "type": "string", "description": "File extension or category" },
+        "date": { "type": "string", "description": "Formatted upload date" },
+        "timestamp": { "type": "number", "description": "Upload timestamp in milliseconds" },
+        "isPublic": { "type": "boolean", "description": "Whether file is publicly accessible" },
+        "mimeType": { "type": "string", "description": "MIME type of the file" },
+        "contentSnippet": { "type": "string", "description": "Text preview snippet" },
+        "dataUrl": { "type": "string", "description": "Base64 data URL or storage URL" }
+      },
+      "required": ["id", "name", "size", "type", "timestamp", "isPublic"]
+    },
+    "settings": {
+      "title": "Drive Settings",
+      "description": "Global drive configuration",
+      "type": "object",
+      "properties": {
+        "isPublic": { "type": "boolean", "description": "Public drive access" },
+        "passwordProtected": { "type": "boolean", "description": "Whether drive requires password" },
+        "allowDownload": { "type": "boolean", "description": "Whether downloading is allowed" }
+      },
+      "required": ["isPublic", "allowDownload"]
+    }
+  },
+  "firestore": {
+    "/files/{fileId}": {
+      "schema": "files",
+      "description": "Collection of uploaded cloud files"
+    },
+    "/settings/{settingId}": {
+      "schema": "settings",
+      "description": "Drive configuration document"
+    }
+  }
+}

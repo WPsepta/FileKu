@@ -1,0 +1,6 @@
+{
+  "name": "FileKu",
+  "description": "Aplikasi Cloud Storage untuk mengunggah, mengelola, mengunduh, dan menghapus berkas dengan mudah dan aman.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
